@@ -1,9 +1,11 @@
 import React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
+
 import CreateTask  from './components/CreateTask';
 import TaskListing from './components/TasksListing';
 import NavBar from './components/NavBar/NavBar';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
+import HomeScreen from "./components/HomeScreen";
 import { TaskProviders } from "./taskContext/TaskContext";
 
 export const Routes = () => {
@@ -15,11 +17,15 @@ export const Routes = () => {
                 <NavBar />
             </Col>
             <Switch>
-                  <Route exact path="/CreateTask" component={CreateTask} />
-                  <Route exact path="/">
-                      <Redirect to="/" />
+                  <Route exact path="/CreateTask">
+                    <CreateTask/>
                   </Route>
-                  <Route exact path="/TaskListing" component={TaskListing} />
+                  <Route exact path="/">
+                      <HomeScreen/>
+                  </Route>
+                  <Route exact path="/TaskListing">
+                      <TaskListing/>
+                  </Route>
               </Switch>
         </Row>
       </Container>

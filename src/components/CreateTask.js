@@ -34,7 +34,7 @@ const CreateTask = () => {
 
   return (
     <Col xs={4}>
-        <h1>Create a Task {task.length}</h1>
+        <h1>Create a Task</h1>
         <ToastContainer />
         <form onSubmit={handleSubmit(onSubmit)}>
             {content.inputs.map((input, key)=>{
